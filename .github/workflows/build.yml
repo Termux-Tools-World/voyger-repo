@@ -39,16 +39,23 @@ jobs:
       - name: Generate and Sign Repo
         run: |
           cd repo
-          apt-ftparchive packages . > Packages
-          cat <<EOF > Release
-          Origin: Voyger X
-          Label: Voyger X
-          Suite: stable
-          Codename: stable
-          Architectures: all
-          Components: main
-          Description: Voyger X Mega Repository
+          
+          # apt-ftparchive config for proper hashing
+          cat <<EOF > apt-ftparchive.conf
+          APT::FTPArchive::Release {
+            Origin "Voyger X";
+            Label "Voyger X";
+            Suite "stable";
+            Codename "stable";
+            Architectures "all";
+            Components "main";
+            Description "Voyger X Mega Repository";
+          }
           EOF
+          
+          # Generate Packages and Release files
+          apt-ftparchive packages . > Packages
+          apt-ftparchive -c apt-ftparchive.conf release . > Release
           
           # GPG Signing without popup error
           export GPG_TTY=$(tty)
