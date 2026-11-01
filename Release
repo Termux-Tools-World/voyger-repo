@@ -1,7 +1,20 @@
-Origin: Voyger X
-Label: Voyger X
-Suite: stable
-Codename: stable
 Architectures: all
+Codename: stable
 Components: main
+Date: Sun, 01 Nov 2026 10:56:14 +0000
 Description: Voyger X Mega Repository
+Label: Voyger X
+Origin: Voyger X
+Suite: stable
+MD5Sum:
+ b17de02f4cb61a8fc291ebf9557960ae              465 Packages
+ 0ab89354a34636a1acba5a9ebe114198              176 Release
+SHA1:
+ cd5808b09949e5bab229ef634de9ed34a71ae42c              465 Packages
+ ea590a6a9cfc7d26b66a3899299b68a397c6e7f3              176 Release
+SHA256:
+ a71515e669dc70b1747c423067e275451896e08dba29f69aaff16ff201b19160              465 Packages
+ 6e16b36a19d11efb3ff9e5f2898641ca87e09050d41cd78141d0958cbd228406              176 Release
+SHA512:
+ 2d648da3354c2017f20b6c0e9ee41c4013c5d690f8065e6e227dbc50c72177a0e5f6337c8d9934f6fdbdea14d39df091436ea3888792e5555be825b9bc557cf1              465 Packages
+ ee21b68a9498818b0a048cedb2d8a55651981e98b55a752ef8ca6718b687480f51e536df5f8473ad843a3ea3086580fa6d0fcb059c929ec7d6abd051aa54babf              176 Release

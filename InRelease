@@ -1,27 +1,40 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-Origin: Voyger X
-Label: Voyger X
-Suite: stable
-Codename: stable
 Architectures: all
+Codename: stable
 Components: main
+Date: Sun, 01 Nov 2026 10:56:14 +0000
 Description: Voyger X Mega Repository
+Label: Voyger X
+Origin: Voyger X
+Suite: stable
+MD5Sum:
+ b17de02f4cb61a8fc291ebf9557960ae              465 Packages
+ 0ab89354a34636a1acba5a9ebe114198              176 Release
+SHA1:
+ cd5808b09949e5bab229ef634de9ed34a71ae42c              465 Packages
+ ea590a6a9cfc7d26b66a3899299b68a397c6e7f3              176 Release
+SHA256:
+ a71515e669dc70b1747c423067e275451896e08dba29f69aaff16ff201b19160              465 Packages
+ 6e16b36a19d11efb3ff9e5f2898641ca87e09050d41cd78141d0958cbd228406              176 Release
+SHA512:
+ 2d648da3354c2017f20b6c0e9ee41c4013c5d690f8065e6e227dbc50c72177a0e5f6337c8d9934f6fdbdea14d39df091436ea3888792e5555be825b9bc557cf1              465 Packages
+ ee21b68a9498818b0a048cedb2d8a55651981e98b55a752ef8ca6718b687480f51e536df5f8473ad843a3ea3086580fa6d0fcb059c929ec7d6abd051aa54babf              176 Release
 -----BEGIN PGP SIGNATURE-----
 
-iQJVBAEBCgA/FiEEb2knR7hftFmWfYWSc9HYzsadHcgFAmrnGCUhHHRlcm11eGZv
-cmFuZHJvaWRhbmRpb3NAZ21haWwuY29tAAoJEHPR2M7GnR3IjJsP/01YqEknwXA8
-R04OIyGUru7/EwCYJtTOgs1JNpZGP76h/DXME2vMPyPSoHcgWThqwO4GJQBK58l/
-g91TIYSCVW+8+mL5mkGc3yWiDH3diUYDASxXXAP/WD7P9gi7DH9q6vxWrRATdia8
-H0qI295YwHaLjdjdUkjabG650nFAwWpzu/C2vyFgU38rwhIbTCQKv1qu87/9gwFd
-1ou9vk4P53/d36cztSYnBxn5I+Y00JhqRL6WviPvAH/3IFDdn2KMhzverKYAFB3m
-yhtLzeil4jYDTYBhRJlamplqrBGK5xeOXezUALgzDR6gHfVh00pRWYS/EZO8aiMo
-ON8iErG3llC2Gf3CmAA/GqFqL/HFAoEA+dp8RjZYV6b3lzisNwH1p5htqiapjLux
-wHPwnAkDnn0pUZZ2a4wS6nvcpde1AkEcZcWf1dCwWbPyTOOW1/EgHgoAZi/GDuQ4
-/iqPrEQ4RLjzPGdjlky0LxSlmhz5/LcS2+G8s0Y3YA9ZoNeV1xUOh19E/Lj0usLn
-w8z6Q1e3PE7/6IrzgyceW2PVPoUy+jSPWkwajQ751rA7RiHZHQ1hfmYjx7r3LozT
-d9rPqu7vErl1VYAdflm02TarBYy/NWVWDfiIYwhKx/YiCi7YeQ1Ok7YYG0QmHwI7
-vO/0QPJa0tPVxYuiiqeK3FjYHosTnT4J
-=YVJy
+iQJVBAEBCgA/FiEEb2knR7hftFmWfYWSc9HYzsadHcgFAmrnGs8hHHRlcm11eGZv
+cmFuZHJvaWRhbmRpb3NAZ21haWwuY29tAAoJEHPR2M7GnR3IPlMQAKXum6Bp9RBX
+FPDz4DnWmrN39i+/G4KmaAnQ55tW+HBFvhf1wzwkHlQ44KQyF+QhUjuDef7I3PmC
+PihvM5B5553mKQ+B2Sal5j0AW86mC5HXQCntgbuw00jfumSsg18sdwTUTWzm4nMP
+rv4u4z27XSDtX/TFoHLMXJ8J0buPeTVmVsq1DAulRtLO9zWJ6ygAFsERphR0cyRb
+hFCPCpTGaVq8cC+eqllXDnvtbqzV9VQ8ik/Z2D62bCOCNHD5+qapmyq010Rh+g3D
+f7NYTADbwJ4t4GpOl04ItnZOh8oNIwctNBNptO4I3adVR2M895cQEFmRkfSffNIw
+1w+1M5wGuk3DQGQy3oDJyX4YJHJamRx4s2w5uWlGjec0wK+4EyloN26VNQhUphBY
+QTbEgv1M/JtBodY/tN/tD2fJ6/ie249bC3JlQjKuksxiiep4REMtP/zExk1mtiFF
+iN6ay1KXR+e0y9mdw3eEVFXhD3UGXjMq/EcOQrRIHUEtz+9/rxUhY++lQMfb3dcJ
+Xj9G+W+DnjM8zCbYRVWSVWIyFd8pO3vsuSC/m3w0c9pak3DuKwIWUmnz2tPICIuJ
+ZCspoxCQwxImUkvtBTlJwxhy/lUGCi9sTEsgcEcn/Tff29yA8go8nlsC78O0g4G/
+teqDit/elfDp5fO/5aQKjxCRzQFHoPNb
+=Etim
 -----END PGP SIGNATURE-----
