@@ -1,4 +1,4 @@
-name: Voyger 'X' Build
+name: Voyger X Build
 on:
   push:
     branches: [ main ]
@@ -7,7 +7,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
       
       - name: Install Dependencies
         run: |
@@ -15,9 +16,12 @@ jobs:
           sudo apt-get install -y dpkg-dev gnupg apt-utils
           
       - name: Import GPG Key
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
-          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
-          echo "${{ secrets.GPG_PASSPHRASE }}" > pass.txt
+          echo -e "$GPG_PRIVATE_KEY" | gpg --batch --import
+          echo "$GPG_PASSPHRASE" > pass.txt
           
       - name: Build Packages
         run: |
@@ -43,9 +47,12 @@ jobs:
           Description: Voyger X Mega Repository
           EOF
           
-          # Signing with GPG
-          gpg --batch --yes --passphrase-file ../pass.txt --default-key "termuxforandroidandios@gmail.com" -abs -o Release.gpg Release
-          gpg --batch --yes --passphrase-file ../pass.txt --default-key "termuxforandroidandios@gmail.com" --clearsign -o InRelease Release
+          # GPG Signing without popup error
+          export GPG_TTY=$(tty)
+          echo "allow-loopback-pinentry" > ~/.gnupg/gpg-agent.conf
+          gpgconf --kill gpg-agent
+          gpg --batch --yes --pinentry-mode loopback --passphrase-file ../pass.txt --default-key "termuxforandroidandios@gmail.com" -abs -o Release.gpg Release
+          gpg --batch --yes --pinentry-mode loopback --passphrase-file ../pass.txt --default-key "termuxforandroidandios@gmail.com" --clearsign -o InRelease Release
           
       - name: Deploy to Branch
         uses: peaceiris/actions-gh-pages@v3
