@@ -1,0 +1,5 @@
+Package: voyger-tool1
+Version: 1.0
+Architecture: all
+Maintainer: Voyger x
+Description: Voyger X first tool for Termux.
