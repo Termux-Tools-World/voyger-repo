@@ -1,1 +1,55 @@
+name: Voyger 'X' Build
+on:
+  push:
+    branches: [ main ]
 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y dpkg-dev gnupg apt-utils
+          
+      - name: Import GPG Key
+        run: |
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
+          echo "${{ secrets.GPG_PASSPHRASE }}" > pass.txt
+          
+      - name: Build Packages
+        run: |
+          mkdir -p repo
+          for dir in packages/*/; do
+            if [ -d "$dir" ]; then
+              pkg_name=$(basename "$dir")
+              dpkg-deb --build "$dir" "repo/${pkg_name}_1.0_all.deb"
+            fi
+          done
+          
+      - name: Generate and Sign Repo
+        run: |
+          cd repo
+          apt-ftparchive packages . > Packages
+          cat <<EOF > Release
+          Origin: Voyger X
+          Label: Voyger X
+          Suite: stable
+          Codename: stable
+          Architectures: all
+          Components: main
+          Description: Voyger X Mega Repository
+          EOF
+          
+          # Signing with GPG
+          gpg --batch --yes --passphrase-file ../pass.txt --default-key "termuxforandroidandios@gmail.com" -abs -o Release.gpg Release
+          gpg --batch --yes --passphrase-file ../pass.txt --default-key "termuxforandroidandios@gmail.com" --clearsign -o InRelease Release
+          
+      - name: Deploy to Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./repo
+          publish_branch: repo-dist
