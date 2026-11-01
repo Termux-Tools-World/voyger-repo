@@ -3,10 +3,10 @@ Architecture: all
 Version: 1.0
 Maintainer: Voyger x
 Filename: ./voyger-tool1_1.0_all.deb
-Size: 682
-MD5sum: fd13aecf67ffc08dae436c8c7ba91996
-SHA1: 7311efecae30abba28f23a2f0c973a76f4063e9f
-SHA256: f154f772399ab791a9b08554baf7b52e1b2be653e331f4a5db975a98646dee3f
-SHA512: c0dc8cd5bfdfba4a37b77fd4e585f74a55ee1a71acb38a12c8a2bf7107ed01b381a898ab02dfcb44c3d33f7e61ecf796c059bb20fa95f3b7d351d4888223e28b
+Size: 680
+MD5sum: 7765a94d466347fd2b5ca32c89b7365e
+SHA1: 83d56852e4f5b150b4c471956783a72ff169f1ef
+SHA256: 7bef82b75eaf8d4f9cac83081d66dde42c16f5f73138a0b2f9438e90c64cf8d0
+SHA512: 0c73077d1f4a62390927d9ad7521cfbaf677dc0df9db24bc8228d3438d4bd83abec8b187a8d7d1084f3e81cd92ae04726830a60aac07d733a4ebb4d70309ca1d
 Description: Voyger X first tool for Termux.
 
