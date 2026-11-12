@@ -1,0 +1,157 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# ==========================================
+# 💀 VOYGER X: ULTIMATE STORE 💀
+# ==========================================
+
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+CYAN='\033[1;36m'
+MAGENTA='\033[1;35m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+FAV_FILE="$HOME/.voyger_favorites"
+
+# whiptail চেক
+if ! command -v whiptail &> /dev/null; then
+    pkg install whiptail -y > /dev/null 2>&1
+fi
+
+# ড্যাশবোর্ড লোগো
+show_banner() {
+    clear
+    echo -e "${RED}"
+    cat << "EOF"
+██╗   ██╗ ██████╗ ██╗   ██╗ ██████╗ ███████╗██████╗     ██╗  ██╗
+██║   ██║██╔═══██╗╚██╗ ██╔╝██╔════╝ ██╔════╝██╔══██╗    ╚██╗██╔╝
+██║   ██║██║   ██║ ╚████╔╝ ██║  ███╗█████╗  ██████╔╝     ╚███╔╝ 
+╚██╗ ██╔╝██║   ██║  ╚██╔╝  ██║   ██║██╔══╝  ██╔══██╗     ██╔██╗ 
+ ╚████╔╝ ╚██████╔╝   ██║   ╚██████╔╝███████╗██║  ██║    ██╔╝ ██╗
+  ╚═══╝   ╚═════╝    ╚═╝    ╚═════╝ ╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═╝
+EOF
+    echo -e "${NC}"
+}
+
+# প্রথমবার ওপেন করলে গিফট মেসেজ
+if [ ! -f "$HOME/.voyger_welcomed" ]; then
+    show_banner
+    echo -e "${CYAN} Welcome to Voyger X Store!${NC}"
+    echo -e "${GREEN} 🎁 You have unlocked access to ultimate hacking tools.${NC}"
+    echo -e "${YELLOW} Enjoy tools, Owner: Voyger${NC}"
+    sleep 3
+    touch "$HOME/.voyger_welcomed"
+fi
+
+# গিটহাব থেকে টুলের লিস্ট ফেচ করা
+fetch_tools() {
+    show_banner
+    echo -e "${CYAN} [*] Syncing with Voyger Servers...${NC}"
+    TOOLS_RAW=$(curl -s "https://raw.githubusercontent.com/Termux-Tools-World/voyger-repo/repo-dist/Packages")
+    TOOLS=$(echo "$TOOLS_RAW" | grep "^Package:" | awk '{print $2}')
+    
+    if [ -z "$TOOLS" ]; then
+        whiptail --title "Network Error" --msgbox "Failed to fetch tool index. Check your internet." 10 50
+        exit 1
+    fi
+}
+
+# মেইন মেনু
+main_menu() {
+    while true; do
+        CHOICE=$(whiptail --title "💀 VOYGER X PREMIUM STORE 💀" --menu "Total Tools: $(echo "$TOOLS" | wc -w)\nYour Personal Gift Hub" 20 65 10 \
+        "1" "🔍 Search Tools" \
+        "2" "📦 Browse All Tools" \
+        "3" "⭐ My Favorites" \
+        "4" "🔄 Update System" \
+        "5" "❌ Exit Store" 3>&1 1>&2 2>&3)
+
+        case $CHOICE in
+            1) search_tool ;;
+            2) list_all_tools ;;
+            3) show_favorites ;;
+            4) update_system ;;
+            5) clear; echo -e "${RED}Exiting Voyger Store...${NC}"; exit 0 ;;
+        esac
+    done
+}
+
+# সার্চ ফাংশন
+search_tool() {
+    SEARCH_TERM=$(whiptail --title "Search" --inputbox "Enter tool name to search:" 10 50 3>&1 1>&2 2>&3)
+    if [ -z "$SEARCH_TERM" ]; then return; fi
+    
+    RESULTS=$(echo "$TOOLS" | grep -i "$SEARCH_TERM")
+    if [ -z "$RESULTS" ]; then
+        whiptail --title "Not Found" --msgbox "No tools found for '$SEARCH_TERM'." 10 50
+        return
+    fi
+    
+    RESULT_ARGS=()
+    for tool in $RESULTS; do RESULT_ARGS+=("$tool" "Install $tool"); done
+    RESULT_ARGS+=("BACK" "Return to Main Menu")
+    
+    SELECTED=$(whiptail --title "Search Results" --menu "Found $(echo "$RESULTS" | wc -w) tools:" 20 60 10 "${RESULT_ARGS[@]}" 3>&1 1>&2 2>&3)
+    if [ "$SELECTED" != "BACK" ] && [ -n "$SELECTED" ]; then install_tool "$SELECTED"; fi
+}
+
+# সব টুল লিস্ট
+list_all_tools() {
+    MENU_ARGS=()
+    for tool in $TOOLS; do MENU_ARGS+=("$tool" "Install $tool"); done
+    MENU_ARGS+=("BACK" "Return to Main Menu")
+    
+    SELECTED=$(whiptail --title "All Tools" --menu "Select a tool to install:" 25 65 15 "${MENU_ARGS[@]}" 3>&1 1>&2 2>&3)
+    if [ "$SELECTED" != "BACK" ] && [ -n "$SELECTED" ]; then install_tool "$SELECTED"; fi
+}
+
+# ইনস্টল ফাংশন (ফেভারিটে সেভ করার অপশনসহ)
+install_tool() {
+    TOOL_NAME=$1
+    clear
+    echo -e "${GREEN}[+] Installing $TOOL_NAME...${NC}"
+    pkg install "$TOOL_NAME" -y
+    
+    # ফেভারিটে যোগ করা
+    if ! grep -q "^$TOOL_NAME$" "$FAV_FILE" 2>/dev/null; then
+        echo "$TOOL_NAME" >> "$FAV_FILE"
+    fi
+    
+    echo ""
+    echo -e "${GREEN}✅ $TOOL_NAME installed successfully! Added to your favorites.${NC}"
+    read -p "Press Enter to return to store..." dummy
+}
+
+# ফেভারিট দেখানো
+show_favorites() {
+    if [ ! -f "$FAV_FILE" ] || [ -z "$(cat "$FAV_FILE")" ]; then
+        whiptail --title "Empty" --msgbox "You have no favorite tools yet. Install some tools first!" 10 50
+        return
+    fi
+    
+    FAV_ARGS=()
+    while IFS= read -r tool; do
+        FAV_ARGS+=("$tool" "Reinstall/Run $tool")
+    done < "$FAV_FILE"
+    FAV_ARGS+=("BACK" "Return to Main Menu")
+    
+    SELECTED=$(whiptail --title "⭐ My Favorites" --menu "Your saved tools:" 20 60 10 "${FAV_ARGS[@]}" 3>&1 1>&2 2>&3)
+    if [ "$SELECTED" != "BACK" ] && [ -n "$SELECTED" ]; then 
+        clear
+        echo -e "${CYAN}Running $SELECTED...${NC}"
+        $SELECTED
+        read -p "Press Enter to return..." dummy
+    fi
+}
+
+# আপডেট ফাংশন
+update_system() {
+    clear
+    echo -e "${CYAN}[+] Updating system...${NC}"
+    pkg update -y
+    read -p "Press Enter to return..." dummy
+}
+
+# রান
+fetch_tools
+main_menu
