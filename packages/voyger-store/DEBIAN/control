@@ -1,0 +1,6 @@
+Package: voyger-store
+Version: 1.0
+Architecture: all
+Maintainer: Voyger
+Description: The ultimate premium TUI store for Voyger X.
+Depends: whiptail
