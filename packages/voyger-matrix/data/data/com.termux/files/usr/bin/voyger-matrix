@@ -1,0 +1,43 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# কালার কোড
+GREEN='\033[0;32m'
+LIGHT_GREEN='\033[1;32m'
+RED='\033[1;31m'
+CYAN='\033[1;36m'
+NC='\033[0m'
+
+clear
+
+echo -e "${RED}💀 INITIATING VOYGER MATRIX PROTOCOL... 💀${NC}"
+sleep 1
+echo -e "${CYAN}>> Bypassing local firewall... [OK]${NC}"
+sleep 1
+echo -e "${CYAN}>> Connecting to dark web nodes... [OK]${NC}"
+sleep 1
+echo -e "${CYAN}>> Extracting target data...${NC}"
+echo ""
+
+# ম্যাট্রিক্স রেইন ইফেক্ট (সবুজ কোড বৃষ্টি)
+for i in {1..5}; do
+    for j in {1..10}; do
+        # র‍্যান্ডম সবুজ অক্ষর ও সংখ্যা তৈরি
+        RANDOM_STR=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 40 | head -n 1)
+        echo -e "${LIGHT_GREEN}${RANDOM_STR}${NC}"
+        sleep 0.05
+    done
+    clear # স্ক্রিন ক্লিয়ার করে নতুন করে বৃষ্টি নামানো
+done
+
+# আসল হ্যাকিং ডাটা দেখানো
+echo -e "${RED}================================================${NC}"
+echo -e "${CYAN}[+] Target System Info:${NC}"
+echo -e " ├─ Device Model : $(getprop ro.product.model)"
+echo -e " ├─ System Arch  : $(uname -m)"
+echo -e " ├─ Kernel Ver   : $(uname -r)"
+echo -e " ├─ Local IP     : $(ifconfig wlan0 2>/dev/null | awk '/inet / {print $2}')"
+echo -e " ├─ Public IP    : $(curl -s ifconfig.me)"
+echo -e " └─ ISP Provider : $(curl -s ipinfo.io/org)"
+echo -e "${RED}================================================${NC}"
+echo ""
+echo -e "${GREEN}💀 TARGET ACQUIRED. YOU ARE IN. 💀${NC}"
