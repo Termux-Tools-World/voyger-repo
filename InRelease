@@ -4,37 +4,37 @@ Hash: SHA512
 Architectures: all
 Codename: stable
 Components: main
-Date: Thu, 12 Nov 2026 15:13:21 +0000
+Date: Thu, 12 Nov 2026 15:16:09 +0000
 Description: Voyger X Mega Repository
 Label: Voyger X
 Origin: Voyger X
 Suite: stable
 MD5Sum:
- 7ef35bd89582d0fa6a6352ab8c4cc882              941 Packages
- 5ba18cb170b8f1d560f56d0eab767157              176 Release
+ 557d03d66817c03e1deffad8e9852b59              941 Packages
+ 6220f0a7f3d1582d39e5eb67ad0cab6a              176 Release
 SHA1:
- 5ff2284e8ed6d00097dff4f12029cd49de37e1af              941 Packages
- 45bd640088d4f7070be7bc0de0972a83c1ef672d              176 Release
+ 2c702be0b357931128668fc96043f42285b6bc58              941 Packages
+ be58ffb8d4ca5ca7346f647cca317de9b067b147              176 Release
 SHA256:
- 436e89f495c183043a151275d937f79f735c09704bc6a989b81d51f2d2e7467e              941 Packages
- ba97b332b9c3939808193c7190fefe57d2a5de242b474fee4ca73bfddac53bcd              176 Release
+ 46f6efb35a21b59738fb1120136785cc4d16d810fac31e8d504201152abb4404              941 Packages
+ 5d7d9a60fd4a7054ff6753efc28bcb8d461c41c76e6109f1bf0ba186379b8dba              176 Release
 SHA512:
- 61014e439befbebe52e2052b85dd979841469af0fa2c54c45dcfebbc61635ee94c2c1ec57ab46fb0d84ae5d5ea8026248451be1cf0897bb26f2a61acaa0cd0fd              941 Packages
- 9bdc63ea066d8afe5698369928aed0f600b35ac285a26a2a1601a7e9b5c6a3df1119f7cfe897d1fdabd73b0f81641ba751696be6bdc53afb00bcc1f34fec2127              176 Release
+ 75851c0bda98e0246d8bf60bbb0ae91d354feeeb221f4e77e95cd08fdfb48ecce6379843bc40aaaaad0a79366b59fe97b858803a555e66d00ec45dea22f2068d              941 Packages
+ 09749ac06aac39baa7146183e7fab6389b0738bf30486402cb6d5e1893bd0ef098bc3ce1379a2c214ce7085ef422ebd757ed50f950c68db342c89f4c9c94067e              176 Release
 -----BEGIN PGP SIGNATURE-----
 
-iQJVBAEBCgA/FiEEb2knR7hftFmWfYWSc9HYzsadHcgFAmr115MhHHRlcm11eGZv
-cmFuZHJvaWRhbmRpb3NAZ21haWwuY29tAAoJEHPR2M7GnR3ISv4P/Rb5miyJnbJT
-IvDvqstgqdjLW0MBye2dMW4p3SAgtQxjtSl6KCMXmyqE7b26Vop1yTdSRyfiZ57+
-Z19xRsaUW7iufL2OSwWvxPbzX9+E37v9T6K+bsHlku84LOKJsC3/T5bYWW+KvtpF
-C1fDZggVufA7ogS3hAmquFJikSpAFp8B5VaqRfsb3Vg4Hc4vd5CR12VMIB9ufef6
-bta7ZHVJlRxj0EGGwEoNsUCSKrR0w6o4TwGOieJcaYjRY0HpIcOW5sdTc4Jl3aDg
-fWB5nN2dWBdyQNgP++d/OEdgOLllecHIv7Q0isIFiOTzWFI3dIhGz55ZWFGcSAJ/
-iFqR7abahTx7bVeq8jTy8Atu4OBAWuGWoJ9BULccRmkBxayVgGGhFB1veofI6gCp
-YahOJzh+JN/fb0Kun9okMxAmFfp+wz1qxNAKDqs/mggcnMSATrrOqtwoCBkkjPo9
-8u34KvdI/ULX7/LuqWeWQyZmTKDnosbxOxOo0im1HJQ9HfxV/4YeNgiVdLvcYNa5
-7cxlJCxJAqVKcyTcFSN5zM2HYT/FPAIglTLP7Rq6Cp+9YeITNVCXT6HpOm3qDaeI
-mqeUtu7oyKd7jWQHrawEghohzEVEzff5HJEyJmqTotrSAJeVFnDFxmXacOzuUPm1
-GsV8JFbTeWJmg9qlhpng2oViOhSalH3E
-=aovd
+iQJVBAEBCgA/FiEEb2knR7hftFmWfYWSc9HYzsadHcgFAmr12DohHHRlcm11eGZv
+cmFuZHJvaWRhbmRpb3NAZ21haWwuY29tAAoJEHPR2M7GnR3I7j4QAJx1dbtgecpV
+ThZRLhX0nGHEWSHlzCntmd5+OOMTeh4nBWB/dC+/LcxKWpO80TxmNPtiQsn5O6tk
+W3GK23kEDajtCuK2ea9QX5RY1PhHZdtOstmq1AhR/VGowhDD+7c0G6+LIAs4jzDT
+uWHh+qbeuJFLvf0fndqSHZyCpg/d9v1cD/XaGPclE9YsBiMHunDJDVc4tB4yLX9w
+3hr6oTC5TA+IDUm4M7e1HkSxAwKBSz38jbEii45C8qStuUgzkENtEX5HDKCick14
+HBuU1EqmfDx+4d95LTg1RiQZa+DgtjGGUsJij48fKO9Js60YhE+u76UpK/3JJCz1
+5qFEdIXOJ0iuWzD7G98+CmzZRJurljg23DT7Cn+acYAUKFcw6ACy1OkHxMn5fCjV
+PPitlvj9zx4M8knWJky+k570X31pGq3JGwkC0gJK+Znj+4g+VP1JW5w6pXG+T+g6
+w5P2ExTQAnx2NhUP5q+oj5gWPG/1nk9Y8RxWX/vs4R1jQ5Z3VJDtsNI75DiJPXki
+Ta/uzAXNWub/QYdI052z8Eme7yy6edDFQGtljeycIXE0RQ9WhbuY9n42kJxrVS3T
+vcF5AiYXS0EkWHW3cXgnFFfx+3a1RtPXyOhE8VFclzImdWkJ4RD2WUMiWtpwI8jP
+PiEKVuYZwg4OXnGnUx5qMpcGa7jGL1U8
+=rLM4
 -----END PGP SIGNATURE-----
