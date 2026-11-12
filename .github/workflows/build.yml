@@ -32,6 +32,8 @@ jobs:
           for dir in packages/*/; do
             if [ -d "$dir" ]; then
               pkg_name=$(basename "$dir")
+              # এই লাইনটা অটোমেটিক পারমিশন (chmod +x) নিশ্চিত করবে
+              find "$dir" -type f -path "*/usr/bin/*" -exec chmod +x {} +
               dpkg-deb --build "$dir" "repo/${pkg_name}_1.0_all.deb"
             fi
           done
