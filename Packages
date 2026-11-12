@@ -4,21 +4,34 @@ Version: 1.0
 Maintainer: D3BU
 Filename: ./voyger-matrix_1.0_all.deb
 Size: 1390
-MD5sum: b1d00cfeef435c0e7b2659a2e6951527
-SHA1: ad91364f6dfe583d5315fd777fb95bddc480f4ee
-SHA256: 35e65fe0b002925e36d12e3d3e846539dd8c0a09f0075a1e3792525020d1131f
-SHA512: db8d4e85ce82aa041c95537921ccd0f9d0799eb82ec521bcd619f51073f0df83a2ccd8fa765199f3b00bdd175501daa2182734a00066926c9f3f84dbcd392b18
+MD5sum: 2e94fb813f061ab3787b9ebd879b42cd
+SHA1: bb702ce60f4de2ecac407288560a4fa6487430d1
+SHA256: 64e5747e9c21cbbc3be577a21821cbfec271761c01988d7e77edc692cd3be04c
+SHA512: 364e3d4fd81af28655f0363cc7349c690fed707539bf44960f073ab9a477e940f2cab748db35fc2b767219a9e2267bf9948741f991c1c8a2861ad3e7b891d718
 Description: The ultimate hacker matrix terminal effect.
+
+Package: voyger-store
+Architecture: all
+Version: 1.0
+Maintainer: Voyger
+Depends: whiptail
+Filename: ./voyger-store_1.0_all.deb
+Size: 486
+MD5sum: 926ea0cb3d9524aa1d0558e9fcabb3e2
+SHA1: 9fb5007cfb902e9e27a6ce7e7c6930474bf72e65
+SHA256: 142b3bf165cd68ccf02ad0a13199fd9aaaa63b9f26958ca48fbcf59ab6548602
+SHA512: bc4381a511788ac95da3f7d6eb3a8b5834d6c4fc3487fb6992363c26d7bfe644a266630b71bc2cd11551ba1b04c699b10cdfd4093c9c77a8d2db8b3c8865f780
+Description: The ultimate premium TUI store for Voyger X.
 
 Package: voyger-tool1
 Architecture: all
 Version: 1.0
 Maintainer: Voyger x
 Filename: ./voyger-tool1_1.0_all.deb
-Size: 676
-MD5sum: e913f1c45ea1eec23e2d9b7e9c775e49
-SHA1: 3c12cff2952e82b5d9ed5b0c4637c3728866f501
-SHA256: e085fc14c6782be1058511a07a2a7525bd0c015d8e188a5f197197d237f58724
-SHA512: ff52c301ebe52aa54b9a32f9550418b0f12ef258f6c7479681846584e130a0ca4805ddebd597bc442f097e39405e24a1cf824d6d62d4f49d710e2d849ffcaeba
+Size: 678
+MD5sum: 9a3ce6ea67e13305614b22d61be1002b
+SHA1: 6a3547f1ba3369be8ce56b7d0739b4fa665d183e
+SHA256: 3affc6fb7915d3d3d8a5331878f6b80a3fef559ccd95ac4dd8a151ef6331ad57
+SHA512: f18fc01fe59b285e5f500759f4f4ab78eb365e748d6e660e933acc9d2a070273b3ed07f7c87be03ec98680eff66ea276979cd452d543a547dd54d1465898adc0
 Description: Voyger X first tool for Termux.
 
